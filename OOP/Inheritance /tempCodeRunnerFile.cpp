@@ -1,0 +1,3 @@
+Human(){
+    //     gender = "Male/female";
+    // }
