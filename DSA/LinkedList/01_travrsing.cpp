@@ -34,8 +34,5 @@ int main(){
         //storing the address of next in temp
         temp = temp->next;
     }
-    
-
-
     return 0;
 }
