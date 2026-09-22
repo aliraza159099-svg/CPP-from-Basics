@@ -11,11 +11,12 @@ typedef Node* nodeptr;
 int main(){
     //creating the first node dynamiaclly
     nodeptr firstNode = new Node;
-    nodeptr head = firstNode;
+    nodeptr head = new Node;
     //lets create multiple nodes
     nodeptr secondNode = new Node;
     nodeptr thirdNode = new Node;
     nodeptr forthNode = new Node;
+    nodeptr fifthNode = new Node;
 
     firstNode->data = 10;
     firstNode->next = secondNode;
@@ -27,14 +28,18 @@ int main(){
     thirdNode->next = forthNode;
 
     forthNode->data = 99;
-    forthNode->next = NULL;
+    forthNode->next = fifthNode;
 
+    fifthNode->data = 63;
+    fifthNode->next = NULL;
     //delete the first emelemt of the list
     
     //temp storing the head address
-    nodeptr temp = head;
-    head = head->next;
-
+    head = firstNode->next;
+    nodeptr temp = new Node;
+    delete temp;
+    
+    temp = head;
     while(temp!=NULL){
         cout<<temp->data<<" ";
         //storing the address of next in temp
