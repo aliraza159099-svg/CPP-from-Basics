@@ -8,6 +8,10 @@ struct Node {
     Node* next;
     Node* prev;
 };
+//insert Function
+void insertNode(Node* head, int value){
+    
+}
 typedef Node* nodeptr;
 int main() {
     //creating nodes
@@ -34,21 +38,12 @@ int main() {
 
     //traversing the circular doubly linked list
     temp = head;
+    insertNode(head, 5);
     //using do wile we can traverse the list
     do {
         cout << temp->data << endl;
         temp = temp->next;
     } while (temp != head);
-
-    cout<<"Moving back using linked list prev : "<<endl;
-    cout<<(node3->prev)->data<<endl;
-    cout<<"Moving back using linked list prev : "<<endl;
-    cout<<((node3->prev)->prev)->data<<endl;
-    delete node1;
-    delete node2;
-    cout<<node3->data<<endl;
-    delete node3;
-    cout<<node3->data;
 
     return 0;
 }
