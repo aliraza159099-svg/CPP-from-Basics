@@ -76,7 +76,7 @@ int main() {
     //traversing the circular doubly linked list
     temp = head;
     deleteNode(head, 63);
-    deleteNode(head, 23);
+    deleteNode(head, 32);
     //using do wile we can traverse the list
     do {
         cout << temp->data << endl;
