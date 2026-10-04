@@ -7,19 +7,51 @@ void push(int item, int &top, int size, int arr[]){
     }else{
         top = top + 1;
         arr[top] = item;
-        cout<<"Item added successfully"<<endl;
+        // cout<<"Item added successfully"<<endl;
+    }
+}
+//the pop function
+void pop(int &top){
+    if(top<0){
+        cout<<"No elements: "<<endl;
+        return;
+    }else{
+        top = top - 1;
+        cout<<"Item removed successfully"<<endl;
     }
 }
 int main(){
     cout<<"implementing astack using array"<<endl;
     int size = 5;
     int arr[size];
-    arr[0] = 23;
-    arr[1] = 34;
-    int top = 1;
-    push(67, top, size, arr);
-    for(int i = 0 ; i<= top ; i++){
-        cout<<arr[i]<<endl;
+    int top = -1;
+    bool condition = true;
+    int choice;
+    int num;
+    while(condition){
+        cout<<"1. Push an element."<<endl;
+        cout<<"2. Pop an element."<<endl;
+        cout<<"3. Dispaly."<<endl;
+        cout<<"4. Exit."<<endl;
+        cin>>choice;
+        if(choice == 1){
+            cout<<"Enter the element : ";
+            cin>>num;
+            push(num, top, size, arr);
+        }else if(choice == 2){
+            pop(top);
+        }else if(choice == 3){
+            cout<<"The elements are : "<<endl;
+            for(int i = 0 ; i<= top ; i++){
+            cout<<arr[i]<<" ";
+            }
+            cout<<endl;
+        }else if(choice == 4){
+            condition = false;
+        }else{
+            cout<<"Please enter a valid choice."<<endl;
+        }
+
     }
     return 0;
 }
