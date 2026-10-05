@@ -24,12 +24,12 @@ int main() {
 
     //connecting the nodes with each other
     node1->next = node2;
-    node1->prev = node2;
+    node1->prev = NULL;
 
     node2->prev = node1;
     node2->next = node3;
 
-    node3->next = node1;
+    node3->next = NULL;
     node3->prev = node2;
 
     //traversing the circular doubly linked list
@@ -38,17 +38,6 @@ int main() {
     do {
         cout << temp->data << endl;
         temp = temp->next;
-    } while (temp != head);
-
-    cout<<"Moving back using linked list prev : "<<endl;
-    cout<<(node3->prev)->data<<endl;
-    cout<<"Moving back using linked list prev : "<<endl;
-    cout<<((node3->prev)->prev)->data<<endl;
-    delete node1;
-    delete node2;
-    cout<<node3->data<<endl;
-    delete node3;
-    cout<<node3->data;
-
+    } while (temp != NULL);
     return 0;
 }

@@ -19,7 +19,7 @@ void deleteNode(Node* head, int value){
     }else{
         while(cur!=NULL && found!=1){
             if(cur->data == value){
-                //not work if the head is meant to remove but work properly for the middle and end nodes
+                //not work if the head is meant to remove but work properly for the middle also not for the end end nodes
                 (cur->prev)->next = cur->next;
                 (cur->next)->prev = cur->prev;
                 found = 1;
