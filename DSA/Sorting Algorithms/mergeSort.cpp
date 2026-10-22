@@ -106,7 +106,7 @@ int main()
     //copying the original array
     int* arr2 = copyArray(arr, size);
     auto t1 = high_resolution_clock::now();
-    mergeSort(arr, 0, size);
+    mergeSort(arr2, 0, size - 1);
     auto t2 = high_resolution_clock::now();
     /* Getting number of milliseconds as an integer. */
     auto ms_int_2 = duration_cast<milliseconds>(t2 - t1);
@@ -117,6 +117,10 @@ int main()
     // for(int i = 0 ; i < size ; i++){
     //     cout<<arr2[i]<<" ";
     // }
+    for(int i = 0 ; i < size ; i++){
+        cout<<" "<<arr2[i];
+    }
+    cout<<endl;
 
     return 0;
 }
