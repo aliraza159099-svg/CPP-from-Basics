@@ -15,6 +15,54 @@ int* copyArray(int arr[], int size) {
     }
     return newArray;
 }
+//the algorithm to merge the sort in order
+
+void merge(int arr[], int start, int mid, int end) {
+    int i = start;
+    int j = mid + 1;
+    int k = 0;
+
+    int temp[end - start + 1];
+
+    // Compare both halves
+    while (i <= mid && j <= end) {
+        //if the element in the right side is smaller then it will stire in the temp
+        if (arr[i] <= arr[j]) {
+            temp[k] = arr[i];
+            //the i pointer is increment so it start pointinf to the next element
+            i++;
+        }
+        else {
+            //if the element on the right side is smaller then it will store in the temp
+            temp[k] = arr[j];
+            //j is increasing so that it start pointing to the next on right side
+            j++;
+        }
+        //in both of the cases the k is increasing
+        k++;
+    }
+
+    // Copy remaining left elements
+    while (i <= mid) {
+        temp[k] = arr[i];
+        i++;
+        k++;
+    }
+
+    // Copy remaining right elements
+    while (j <= end) {
+        temp[k] = arr[j];
+        j++;
+        k++;
+    }
+
+    // Copy temporary array back
+    for (i = start, k = 0; i <= end; i++, k++) {
+        arr[i] = temp[k];
+    }
+}
+
+
 
 //the insertion algorithm
 void mergeSort(int arr[],int start, int end){
@@ -22,7 +70,7 @@ void mergeSort(int arr[],int start, int end){
         int mid = (start + end)/2;
         mergeSort(arr, start, mid);
         mergeSort(arr, mid + 1, end);
-
+        merge(arr, start, mid, end);
     }
 }
 
@@ -54,7 +102,7 @@ int main()
     }
     
     //the insertion sort calling
-    cout<<"Sorting by using the Insertion Algorithm"<<endl;
+    cout<<"Sorting by using the Merge Algorithm"<<endl;
     //copying the original array
     int* arr2 = copyArray(arr, size);
     auto t1 = high_resolution_clock::now();
