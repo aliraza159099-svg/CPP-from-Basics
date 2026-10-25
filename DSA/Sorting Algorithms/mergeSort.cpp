@@ -16,7 +16,6 @@ int* copyArray(int arr[], int size) {
     return newArray;
 }
 //the algorithm to merge the sort in order
-
 void merge(int arr[], int start, int mid, int end) {
     int i = start;
     int j = mid + 1;
