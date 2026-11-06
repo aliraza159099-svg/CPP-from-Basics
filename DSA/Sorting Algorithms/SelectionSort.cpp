@@ -10,7 +10,7 @@ void selectionSort(vector<int> &arr){
         for(int j = i+1; j < arr.size(); j++){
             //if an element s smaller than the first of the array then it will repalce otherwise not
             if (arr[j] < arr[k]){
-                a = j;
+                k = j;
             };
         }
           swap(arr[i],arr[k]);        
