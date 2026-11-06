@@ -36,3 +36,10 @@ int main(){
 
     return 0;
 }
+
+/*
+Time Complexity: O(n2) ,as there are two nested loops:
+Outer loop to select an element of Array one by one = O(n)
+Inner loop to compare that element with every other Array element = O(n)
+Therefore overall complexity = O(n) * O(n) = O(n*n) = O(n2)
+*/

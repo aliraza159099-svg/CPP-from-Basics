@@ -19,15 +19,24 @@ int* copyArray(int arr[], int size) {
 //the insertion algorithm
 void insertionSort(int arr[], int n){
     //starting from the elemet at the first index and comapring with the elements on the left side
-    for(int i = 1; i < n ;i++ ){
-        int temp = arr[i];//storing element at i in temp
-        for(int j = i; j > 0 && temp < arr[j-1] ; j-- )//checks whether the the temp is smaller then the elements on the right of the array
-        {
-            arr[j] = arr[j-1];
-            arr[j] = temp;
+    // for(int i = 1; i < n ;i++ ){
+    //     int temp = arr[i];//storing element at i in temp
+    //     for(int j = i; j > 0 && temp < arr[j-1] ; j-- )//checks whether the the temp is smaller then the elements on the right of the array
+    //     {
+    //         arr[j] = arr[j-1];
+    //         arr[j] = temp;
+    //     }
+    // }
+    //version 2 using While Loop
+            for(int i = 1 ; i < n ; i++){
+            int key = arr[i];
+            int j = i - 1;
+            while(j >= 0 && arr[j] > key){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = key;
         }
-
-    }
 }
 
 

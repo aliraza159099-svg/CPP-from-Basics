@@ -25,14 +25,21 @@ void bubbleSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
         // Inner loop does adjacent comparisons
         // As i increases, the last i elements are already sorted
+        //optimisation can be achieve by using the flags
+        bool flag = false;
         for (int j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 // Swap if elements are in the wrong order
                 int temp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
+                // Setting flag true when swap happened
+                flag = true;
             }
         }
+        // Checking if the flag is set or not
+        if (!flag)
+            break;
     }
 }
 
