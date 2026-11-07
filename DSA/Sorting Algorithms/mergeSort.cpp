@@ -25,7 +25,7 @@ void merge(int arr[], int start, int mid, int end) {
 
     // Compare both halves
     while (i <= mid && j <= end) {
-        //if the element in the right side is smaller then it will stire in the temp
+        //if the element in the right side is smaller then it will store in the temp
         if (arr[i] <= arr[j]) {
             temp[k] = arr[i];
             //the i pointer is increment so it start pointinf to the next element
@@ -55,7 +55,7 @@ void merge(int arr[], int start, int mid, int end) {
         k++;
     }
 
-    // Copy temporary array back
+    // Copy temporary array back to the original 
     for (i = start, k = 0; i <= end; i++, k++) {
         arr[i] = temp[k];
     }
