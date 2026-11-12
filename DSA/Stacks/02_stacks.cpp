@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 void push(int item, int &top, int size, int arr[]){
-    if(size -1 == top){
+    if(size -1 >= top){
         cout<<"No space to add new elements: "<<endl;
         return;
     }else{
