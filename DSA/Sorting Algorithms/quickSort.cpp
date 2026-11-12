@@ -46,10 +46,10 @@ int partition(int arr[], int low, int high) {
 //Partion using the median of three
 /** Partition function using Median-of-Three and Hoare's scheme with do-while
 int partitionMedian3(int arr[], int low, int high) {
-    // Step 1: Find the center index
+    //Find the center index
     int center = (low + high) / 2;
 
-    // Step 2: Sort low, center, and high elements (Median-of-Three setup)
+    // Sort low, center, and high elements (Median-of-Three setup)
     if (arr[center] < arr[low])
         swap(arr[low], arr[center]);
     if (arr[high] < arr[low])
@@ -57,11 +57,11 @@ int partitionMedian3(int arr[], int low, int high) {
     if (arr[high] < arr[center])
         swap(arr[center], arr[high]);
 
-    // Step 3: Hide the pivot (which is at 'center') into the second-to-last position (high - 1)
+    // Hide the pivot (which is at 'center') into the second-to-last position (high - 1)
     swap(arr[center], arr[high - 1]);
     int pivot = arr[high - 1]; //
 
-    // Step 4: Setup pointers for the inner section
+    //Setup pointers for the inner section
     int p = low;          // Starts at low (since arr[low] is guaranteed <= pivot now)
     int q = high - 1;     // Starts at the hidden pivot position
 
@@ -86,7 +86,7 @@ int partitionMedian3(int arr[], int low, int high) {
         arr[q] = temp;
     }
 
-    // Step 5: Restore the pivot from its hiding place (high - 1) to its final home (at index p)[cite: 3]
+    //Restore the pivot from its hiding place (high - 1) to its final home (at index p)[cite: 3]
     swap(arr[p], arr[high - 1]);
 
     // Return the split index where the pivot ended up
@@ -109,29 +109,6 @@ int partion(vector<int> arr, int low, int high, int pivotIndex){
     swap(arr[index], pivot);
     return index;
 }
-// // Partition function using Hoare's partition scheme with while loop
-// int partition(int arr[], int low, int high) {
-//     int pivot = arr[low]; // Choose the first element as pivot
-//     int p = low ;
-//     int q = high;
-
-//     while (true) {
-//         // Find leftmost element greater than or equal to pivot
-//         while (arr[p] < pivot)p++;
-
-//         // Find rightmost element smaller than or equal to pivot
-//         while (arr[q] > pivot)q--;
-
-//         // If pointers cross, partition is complete
-//         if (p >= q)
-//             return q;
-
-//         // Swap elements
-//         int temp = arr[p];
-//         arr[p] = arr[q];
-//         arr[q] = temp;
-//     }
-// }
 
 // QuickSort Algorithm
 void quickSort(int arr[], int low, int high) {

@@ -4,7 +4,6 @@
 #include <thread>
 using namespace std;
 #include <cstdlib>
-#include <compare>
 
 //function to copy the original array
 // Function to copy the original array
